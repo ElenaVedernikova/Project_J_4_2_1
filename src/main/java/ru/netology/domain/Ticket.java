@@ -10,7 +10,7 @@ import java.util.Comparator;
 @AllArgsConstructor
 @Data
 public class Ticket implements Comparable<Ticket> {
-    public static Comparator<Ticket> comparator;
+
     private int id;
     private int price;
     private String from;

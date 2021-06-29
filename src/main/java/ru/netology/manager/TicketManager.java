@@ -20,7 +20,7 @@ public class TicketManager {
     public Ticket[] findAll(String from, String to, Comparator<Ticket> comparator) {
         Ticket[] result = new Ticket[0];
         for (Ticket ticket : repository.searchBy()) {
-            if (ticket.getFrom() == from && ticket.getTo() == to) {
+            if (ticket.getFrom().equals(from) && ticket.getTo().equals(to)) {
 
                 Ticket[] tmp = new Ticket[result.length + 1];
                 System.arraycopy(result, 0, tmp, 0, result.length);
