@@ -62,4 +62,22 @@ class TicketManagerTest {
         assertArrayEquals(expected, actual);
     }
 
+    @Test
+    public void shouldNotFindByPrice() {
+        manager.add(ticketMoFr1);
+        manager.add(ticketLeGo);
+        manager.add(ticketGoLe);
+        manager.add(ticketKuFr);
+        manager.add(ticketZkKu2);
+        manager.add(ticketMoFr2);
+        manager.add(ticketZkKu1);
+        manager.add(ticketKuLe);
+        manager.add(ticketMoFr3);
+        manager.add(ticketMoFr4);
+
+        Ticket[] expected = new Ticket[]{};
+        Ticket[] actual = manager.findAll("ZKD", "MOW");
+        Arrays.sort(actual);
+        assertArrayEquals(expected, actual);
+    }
 }
