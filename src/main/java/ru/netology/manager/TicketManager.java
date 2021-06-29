@@ -5,7 +5,6 @@ import ru.netology.repository.TicketRepository;
 
 public class TicketManager {
     private TicketRepository repository;
-    private String text;
 
     public TicketManager(TicketRepository repository) {
         this.repository = repository;
@@ -18,7 +17,7 @@ public class TicketManager {
     public Ticket[] findAll(String from, String to) {
         Ticket[] result = new Ticket[0];
         for (Ticket ticket : repository.searchBy()) {
-            if (ticket.getFrom() == from && ticket.getTo() == to) {
+            if (ticket.getFrom().equals(from) && ticket.getTo().equals(to)) {
 
                 Ticket[] tmp = new Ticket[result.length + 1];
                 System.arraycopy(result, 0, tmp, 0, result.length);
